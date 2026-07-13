@@ -19,11 +19,11 @@ export default function Hero() {
         className="absolute top-20 right-10 w-[500px] h-[500px] bg-terracotta/5 rounded-full blur-3xl pointer-events-none"
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-12 md:gap-y-6 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col md:grid md:grid-cols-2 gap-y-8 md:gap-x-12 md:gap-y-6 items-center">
         
         {/* Text Content - Headline */}
-        <div className="col-span-1 md:col-start-1 md:row-start-1 z-10 flex flex-col justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-charcoal leading-tight md:mb-2">
+        <div className="w-full md:col-start-1 md:row-start-1 z-10 flex flex-col justify-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-charcoal leading-tight md:mb-2 text-center md:text-left">
             {headline.split(" ").map((word, i) => (
               <motion.span
                 key={i}
@@ -34,7 +34,7 @@ export default function Hero() {
                   delay: 0.3 + i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="inline-block mr-1.5 md:mr-3"
+                className="inline-block mr-2 md:mr-3"
               >
                 {word}
               </motion.span>
@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="col-span-1 md:col-start-2 md:row-start-1 md:row-span-3 relative h-[300px] sm:h-[400px] md:h-[600px] w-full max-w-md mx-auto md:ml-auto z-0"
+          className="w-full md:col-start-2 md:row-start-1 md:row-span-3 relative h-[450px] sm:h-[550px] md:h-[600px] max-w-md mx-auto md:ml-auto z-0 mt-4 md:mt-0"
         >
           <div className="absolute inset-0 bg-terracotta/10 rounded-t-full rounded-b-3xl transform rotate-3 scale-105" />
           <div className="relative h-full w-full">
@@ -65,25 +65,25 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-clay flex items-center gap-3 md:gap-4 scale-90 md:scale-100 origin-bottom-left"
+            className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 bg-white p-4 rounded-xl md:rounded-2xl shadow-xl border border-clay flex items-center gap-3 md:gap-4 scale-95 md:scale-100 origin-bottom-left"
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-terracotta rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
+            <div className="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center text-white font-bold text-xl">
               10+
             </div>
             <div>
-              <p className="text-xs md:text-sm font-bold text-charcoal">Years</p>
-              <p className="text-[10px] md:text-xs text-charcoal-light">Experience</p>
+              <p className="text-sm font-bold text-charcoal">Years</p>
+              <p className="text-xs text-charcoal-light">Experience</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Text Content - Paragraph */}
-        <div className="col-span-2 md:col-start-1 md:row-start-2 z-10">
+        <div className="w-full md:col-start-1 md:row-start-2 z-10 mt-6 md:mt-0">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-base sm:text-lg md:text-xl text-charcoal-light max-w-lg"
+            className="text-lg md:text-xl text-charcoal-light max-w-lg mx-auto md:mx-0 text-center md:text-left"
           >
             Navigating the Addis Ababa market with elegance, expertise, and an unwavering commitment to your real estate goals.
           </motion.p>
@@ -94,7 +94,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="col-span-2 md:col-start-1 md:row-start-3 z-10 flex flex-col sm:flex-row flex-wrap gap-4"
+          className="w-full md:col-start-1 md:row-start-3 z-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start"
         >
           <a
             href="#contact"
