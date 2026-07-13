@@ -7,7 +7,7 @@ export default function Hero() {
   const headline = "Trusted Real Estate Agent in Addis Ababa";
   
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 md:pt-20 md:pb-0 overflow-hidden">
       {/* Background Soft Color */}
       <div className="absolute inset-0 bg-gradient-to-br from-clay to-white z-0" />
       
@@ -16,14 +16,14 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-20 right-10 w-[500px] h-[500px] bg-terracotta/5 rounded-full blur-3xl"
+        className="absolute top-20 right-10 w-[500px] h-[500px] bg-terracotta/5 rounded-full blur-3xl pointer-events-none"
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <div className="max-w-2xl">
-
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-charcoal leading-tight mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-2 gap-x-4 gap-y-6 md:gap-x-12 md:gap-y-6 items-center">
+        
+        {/* Text Content - Headline */}
+        <div className="col-span-1 md:col-start-1 md:row-start-1 z-10 flex flex-col justify-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-charcoal leading-tight md:mb-2">
             {headline.split(" ").map((word, i) => (
               <motion.span
                 key={i}
@@ -34,42 +34,12 @@ export default function Hero() {
                   delay: 0.3 + i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="inline-block mr-3"
+                className="inline-block mr-1.5 md:mr-3"
               >
                 {word}
               </motion.span>
             ))}
           </h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-lg md:text-xl text-charcoal-light mb-8 max-w-lg"
-          >
-            Navigating the Addis Ababa market with elegance, expertise, and an unwavering commitment to your real estate goals.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="#contact"
-              className="group flex items-center gap-2 bg-charcoal text-white px-8 py-4 rounded-full hover:bg-terracotta transition-colors shadow-lg"
-            >
-              <span>Work With Me</span>
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#listings"
-              className="flex items-center gap-2 bg-white text-charcoal border border-charcoal/10 px-8 py-4 rounded-full hover:bg-clay transition-colors shadow-sm"
-            >
-              View Listings
-            </a>
-          </motion.div>
         </div>
         
         {/* Image / Headshot */}
@@ -77,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative h-[600px] w-full max-w-md mx-auto md:ml-auto"
+          className="col-span-1 md:col-start-2 md:row-start-1 md:row-span-3 relative h-[300px] sm:h-[400px] md:h-[600px] w-full max-w-md mx-auto md:ml-auto z-0"
         >
           <div className="absolute inset-0 bg-terracotta/10 rounded-t-full rounded-b-3xl transform rotate-3 scale-105" />
           <div className="relative h-full w-full">
@@ -85,7 +55,7 @@ export default function Hero() {
             <img
               src="/headshot.png"
               alt="Fyora Abel - Real Estate Agent in Addis Ababa making a call sign, full body photo"
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-xl"
               fetchPriority="high"
             />
           </div>
@@ -95,17 +65,52 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-clay flex items-center gap-4"
+            className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-clay flex items-center gap-3 md:gap-4 scale-90 md:scale-100 origin-bottom-left"
           >
-            <div className="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center text-white font-bold text-xl">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-terracotta rounded-full flex items-center justify-center text-white font-bold text-lg md:text-xl">
               10+
             </div>
             <div>
-              <p className="text-sm font-bold text-charcoal">Years</p>
-              <p className="text-xs text-charcoal-light">Experience</p>
+              <p className="text-xs md:text-sm font-bold text-charcoal">Years</p>
+              <p className="text-[10px] md:text-xs text-charcoal-light">Experience</p>
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Text Content - Paragraph */}
+        <div className="col-span-2 md:col-start-1 md:row-start-2 z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="text-base sm:text-lg md:text-xl text-charcoal-light max-w-lg"
+          >
+            Navigating the Addis Ababa market with elegance, expertise, and an unwavering commitment to your real estate goals.
+          </motion.p>
+        </div>
+
+        {/* Text Content - Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="col-span-2 md:col-start-1 md:row-start-3 z-10 flex flex-col sm:flex-row flex-wrap gap-4"
+        >
+          <a
+            href="#contact"
+            className="group flex items-center justify-center gap-2 bg-charcoal text-white px-8 py-4 rounded-full hover:bg-terracotta transition-colors shadow-lg w-full sm:w-auto text-center"
+          >
+            <span>Work With Me</span>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#listings"
+            className="flex items-center justify-center gap-2 bg-white text-charcoal border border-charcoal/10 px-8 py-4 rounded-full hover:bg-clay transition-colors shadow-sm w-full sm:w-auto text-center"
+          >
+            View Listings
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );
