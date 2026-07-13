@@ -29,23 +29,14 @@ export default function OnboardingPopup() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-6">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={handleClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
-          />
-
+        <div className="fixed bottom-4 left-4 right-4 z-50 flex justify-end md:bottom-8 md:right-8 md:left-auto pointer-events-none">
           {/* Popup Content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
+            className="pointer-events-auto relative w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
           >
             {/* Close Button */}
             <button
@@ -57,43 +48,45 @@ export default function OnboardingPopup() {
             </button>
 
             {/* Header Image/Pattern Area */}
-            <div className="relative h-32 w-full bg-gradient-to-br from-[#1A1A1A] to-[#333333]">
+            <div className="relative h-24 w-full bg-gradient-to-br from-[#1A1A1A] to-[#333333]">
               <div className="absolute inset-0 bg-black/20" />
-              <div className="absolute -bottom-6 left-1/2 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-2xl bg-white shadow-lg ring-4 ring-white">
-                <Store className="h-8 w-8 text-[#1A1A1A]" />
+              <div className="absolute -bottom-5 left-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-lg ring-4 ring-white">
+                <Store className="h-6 w-6 text-[#1A1A1A]" />
               </div>
             </div>
 
             {/* Body */}
-            <div className="px-6 pb-8 pt-10 text-center">
-              <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+            <div className="px-6 pb-6 pt-8 text-left">
+              <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900">
                 50 Premium Shops
               </h3>
               
-              <div className="mb-6 space-y-3 text-gray-600">
-                <p className="font-semibold text-lg text-gray-800">
+              <div className="mb-5 space-y-2 text-gray-600">
+                <p className="font-semibold text-gray-800">
                   9.55 m² – 39 m²
                 </p>
                 <p className="text-sm leading-relaxed">
-                  Prime locations available on the Ground, First, Mezzanine, and Second floors. Perfect for your next business venture.
+                  Available on the Ground, First, Mezzanine, and Second floors.
                 </p>
               </div>
 
               {/* Call to Action */}
-              <a
-                href="tel:+251900575151"
-                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A1A1A] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-black hover:shadow-md active:scale-[0.98]"
-              >
-                <Phone className="h-4 w-4 transition-transform group-hover:scale-110" />
-                Call Now If Interested
-              </a>
-              
-              <button
-                onClick={handleClose}
-                className="mt-4 text-sm font-medium text-gray-500 hover:text-gray-800"
-              >
-                Dismiss
-              </button>
+              <div className="flex items-center gap-3">
+                <a
+                  href="tel:+251900575151"
+                  className="group flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#1A1A1A] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-black hover:shadow-md active:scale-[0.98]"
+                >
+                  <Phone className="h-4 w-4 transition-transform group-hover:scale-110" />
+                  Call Now
+                </a>
+                
+                <button
+                  onClick={handleClose}
+                  className="rounded-xl px-4 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors"
+                >
+                  Dismiss
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>
