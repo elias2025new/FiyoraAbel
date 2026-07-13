@@ -9,7 +9,8 @@ import Testimonials from "@/components/Testimonials";
 import ServiceAreas from "@/components/ServiceAreas";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import Footer from "@/components/Footer";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
+import FloatingCTA from "@/components/FloatingCTA";
+import OnboardingPopup from "@/components/OnboardingPopup";
 
 export default function Home() {
   return (
@@ -25,7 +26,8 @@ export default function Home() {
       <ServiceAreas />
       <LeadCaptureForm />
       <Footer />
-      <StickyMobileCTA />
+      <FloatingCTA />
+      <OnboardingPopup />
     </main>
   );
 }

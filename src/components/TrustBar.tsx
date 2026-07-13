@@ -11,8 +11,6 @@ export default function TrustBar() {
   });
 
   const stats = [
-    { icon: <Home size={24} />, value: "150+", label: "Properties Sold" },
-    { icon: <Users size={24} />, value: "200+", label: "Happy Clients" },
     { icon: <Star size={24} />, value: "5.0", label: "Average Rating" },
     { icon: <Award size={24} />, value: "Top 1%", label: "Aftaza Properties" },
   ];
@@ -20,7 +18,7 @@ export default function TrustBar() {
   return (
     <section className="bg-charcoal text-white py-12" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-charcoal-light/30">
+        <div className="grid grid-cols-2 gap-8 divide-x divide-charcoal-light/30">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

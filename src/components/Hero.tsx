@@ -68,7 +68,7 @@ export default function Hero() {
             className="absolute -bottom-4 -left-2 md:-bottom-6 md:-left-6 bg-white p-4 rounded-xl md:rounded-2xl shadow-xl border border-clay flex items-center gap-3 md:gap-4 scale-95 md:scale-100 origin-bottom-left"
           >
             <div className="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center text-white font-bold text-xl">
-              10+
+              4+
             </div>
             <div>
               <p className="text-sm font-bold text-charcoal">Years</p>
