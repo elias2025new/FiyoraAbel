@@ -10,15 +10,29 @@ export default function OnboardingPopup() {
   useEffect(() => {
     // Check if the user has already seen the popup in this session
     const hasSeenPopup = sessionStorage.getItem("hasSeenOnboardingPopup");
-    
-    if (!hasSeenPopup) {
-      // Show the popup after a 1.5s delay for a smoother entrance
-      const timer = setTimeout(() => {
+    if (hasSeenPopup) return;
+
+    let timer: NodeJS.Timeout;
+
+    const startTimer = () => {
+      // Wait an additional 2 seconds after EVERYTHING (images, scripts) has loaded
+      timer = setTimeout(() => {
         setIsVisible(true);
-      }, 1500);
-      
-      return () => clearTimeout(timer);
+      }, 2000);
+    };
+
+    // If the page is already fully loaded, start the timer
+    if (document.readyState === "complete") {
+      startTimer();
+    } else {
+      // Otherwise, wait for the window 'load' event
+      window.addEventListener("load", startTimer);
     }
+    
+    return () => {
+      window.removeEventListener("load", startTimer);
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   const handleClose = () => {
