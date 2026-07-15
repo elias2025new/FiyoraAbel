@@ -141,9 +141,12 @@ export default function FeaturedListings() {
                   <div className="bg-white rounded-2xl overflow-hidden border border-clay hover:shadow-xl transition-shadow group h-full flex flex-col">
                     <div className="aspect-[4/3] bg-clay relative overflow-hidden flex items-center justify-center cursor-pointer" onClick={() => setSelectedListing(listing)}>
                        {/* Placeholder for Property Image */}
-                       <div className="text-charcoal-light italic font-medium z-10">
-                         [{listing.imagePlaceholder}]
-                       </div>
+                       {/* eslint-disable-next-line @next/next/no-img-element */}
+                       <img 
+                         src="/icon.png" 
+                         alt={listing.title} 
+                         className="w-24 h-24 object-contain opacity-40 z-10 grayscale-[50%]"
+                       />
                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-20" />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
