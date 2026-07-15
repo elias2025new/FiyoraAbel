@@ -16,6 +16,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Fyora Abel | Real Estate Agent in Addis Ababa | Aftaza Properties",
   description: "Expert real estate services in Addis Ababa with Aftaza Properties. Whether buying or selling, Fyora Abel is your trusted agent.",
+  keywords: ["real estate agents", "property agent", "real estate marketing", "real estate", "realtor agent", "sell my property", "marketing for real estate agents", "real estate for sale", "real estate broker", "estate agent", "find a real estate agent", "best estate agents", "top real estate agents", "find a realtor", "local real estate agents", "real estate buyers", "best real estate agent", "real estate companies", "buyers agent", "property for sale", "free estate agents", "getting into real estate", "best estate agent in my area", "real estate agent career", "sell your property", "Apartment for sale", "Shop for sale"],
   openGraph: {
     title: "Fyora Abel | Real Estate Agent in Addis Ababa",
     description: "Expert real estate services in Addis Ababa with Aftaza Properties.",

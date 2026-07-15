@@ -69,7 +69,41 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        {/* SEO Keywords Block */}
+        <div className="border-t border-white/10 pt-8 pb-6">
+          <h4 className="sr-only">Popular Real Estate Searches</h4>
+          <p className="text-[11px] text-gray-500/60 leading-relaxed text-center max-w-6xl mx-auto flex flex-wrap justify-center gap-x-3 gap-y-1">
+            <span>real estate agents</span> &bull; 
+            <span>property agent</span> &bull; 
+            <span>real estate marketing</span> &bull; 
+            <span>real estate</span> &bull; 
+            <span>realtor agent</span> &bull; 
+            <span>sell my property</span> &bull; 
+            <span>marketing for real estate agents</span> &bull; 
+            <span>real estate for sale</span> &bull; 
+            <span>real estate broker</span> &bull; 
+            <span>estate agent</span> &bull; 
+            <span>find a real estate agent</span> &bull; 
+            <span>best estate agents</span> &bull; 
+            <span>top real estate agents</span> &bull; 
+            <span>find a realtor</span> &bull; 
+            <span>local real estate agents</span> &bull; 
+            <span>real estate buyers</span> &bull; 
+            <span>best real estate agent</span> &bull; 
+            <span>real estate companies</span> &bull; 
+            <span>buyers agent</span> &bull; 
+            <span>property for sale</span> &bull; 
+            <span>free estate agents</span> &bull; 
+            <span>getting into real estate</span> &bull; 
+            <span>best estate agent in my area</span> &bull; 
+            <span>real estate agent career</span> &bull; 
+            <span>sell your property</span> &bull; 
+            <span>Apartment for sale</span> &bull; 
+            <span>Shop for sale</span>
+          </p>
+        </div>
+
+        <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>&copy; {currentYear} Fyora Abel Real Estate. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
