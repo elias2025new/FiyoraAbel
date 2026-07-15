@@ -98,12 +98,12 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* Text Content - Buttons */}
+        {/* Text Content - Buttons (small screens only) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="w-full md:col-start-1 md:row-start-3 z-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start"
+          className="w-full md:col-start-1 md:row-start-3 z-10 flex md:hidden flex-col sm:flex-row flex-wrap gap-4 justify-center"
         >
           <a
             href="#contact"

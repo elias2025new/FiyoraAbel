@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Send } from "lucide-react";
+import { Phone, Send, ChevronUp } from "lucide-react";
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,6 +37,18 @@ export default function FloatingCTA() {
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3"
         >
+          {/* Back to Top — small screens only */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="md:hidden flex items-center justify-center bg-white text-charcoal border border-charcoal/10 p-3 rounded-full shadow-md hover:bg-clay hover:-translate-y-1 transition-all duration-300 group relative"
+            aria-label="Back to top"
+          >
+            <ChevronUp size={18} className="group-hover:-translate-y-0.5 transition-transform" />
+            <span className="absolute right-full mr-3 bg-white text-charcoal text-xs font-medium px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              Back to top
+            </span>
+          </button>
+
           <a
             href="tel:+251900575151"
             className="flex items-center justify-center gap-2 bg-charcoal text-white px-6 py-4 rounded-full font-medium shadow-lg hover:bg-charcoal/90 hover:-translate-y-1 transition-all duration-300"
