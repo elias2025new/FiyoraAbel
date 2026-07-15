@@ -56,18 +56,20 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 md:hidden relative flex items-center justify-center mx-auto w-fit"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-6 md:hidden flex items-center justify-center gap-2.5 mx-auto bg-terracotta text-white px-6 py-2.5 rounded-full font-semibold text-lg w-fit shadow-md"
           >
-            <div className="absolute inset-0 bg-terracotta rounded-full animate-ping opacity-75"></div>
-            <div className="relative flex items-center justify-center gap-3 bg-terracotta text-white px-7 py-3 rounded-full font-bold text-xl shadow-lg">
-              <motion.div
-                animate={{ rotate: [0, -15, 15, -15, 15, 0] }}
-                transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 1.5 }}
-              >
-                <PhoneCall size={24} />
-              </motion.div>
+            <motion.div
+              animate={{ rotate: [0, -8, 8, -8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
+            >
+              <PhoneCall size={20} />
+            </motion.div>
+            <span className="flex items-center gap-2">
+              <span className="text-2xl leading-none">🇪🇹</span>
               <span>+2519 00 57 51 51</span>
-            </div>
+            </span>
           </motion.a>
         </div>
         
