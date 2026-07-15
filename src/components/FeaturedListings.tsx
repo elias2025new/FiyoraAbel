@@ -3,25 +3,26 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, BedDouble, Bath, SquareArrowOutUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, BedDouble, Store, SquareArrowOutUpRight, Layers } from "lucide-react";
 import { useCallback } from "react";
 
 const listings = [
   {
     id: 1,
-    title: "Modern Villa in Bole",
-    price: "150,000,000 ETB",
-    beds: 5,
-    baths: 4,
-    area: "850 sqm",
-    imagePlaceholder: "Bole Villa Image",
+    title: "Commercial Units / Shops in CMC",
+    price: "50 Shops Available",
+    beds: 0,
+    baths: 0,
+    area: "9.55 m² – 39 m²",
+    floors: "Ground, 1st, Mezzanine & 2nd",
+    imagePlaceholder: "CMC Commercial Shops Image",
   },
   {
     id: 2,
     title: "Luxury Apartment, Kazanchis",
     price: "45,000,000 ETB",
     beds: 3,
-    baths: 2,
+    baths: 0,
     area: "210 sqm",
     imagePlaceholder: "Kazanchis Apartment Image",
   },
@@ -30,7 +31,7 @@ const listings = [
     title: "Family Home in Old Airport",
     price: "85,000,000 ETB",
     beds: 4,
-    baths: 3.5,
+    baths: 0,
     area: "500 sqm",
     imagePlaceholder: "Old Airport Home Image",
   },
@@ -39,7 +40,7 @@ const listings = [
     title: "Commercial Space, CMC",
     price: "120,000,000 ETB",
     beds: 0,
-    baths: 2,
+    baths: 0,
     area: "1200 sqm",
     imagePlaceholder: "CMC Commercial Image",
   },
@@ -125,21 +126,29 @@ export default function FeaturedListings() {
                       <div className="text-terracotta font-bold text-xl mb-2">{listing.price}</div>
                       <h3 className="text-xl font-serif text-charcoal mb-4 line-clamp-1">{listing.title}</h3>
                       
-                      <div className="flex gap-4 text-charcoal-light text-sm mb-6 border-b border-clay pb-4">
+                      <div className="flex flex-wrap gap-3 text-charcoal-light text-sm mb-6 border-b border-clay pb-4">
                         {listing.beds > 0 && (
                           <div className="flex items-center gap-1">
                             <BedDouble size={16} />
                             <span>{listing.beds} Beds</span>
                           </div>
                         )}
-                        <div className="flex items-center gap-1">
-                          <Bath size={16} />
-                          <span>{listing.baths} Baths</span>
-                        </div>
+                        {listing.id === 1 && (
+                          <div className="flex items-center gap-1">
+                            <Store size={16} />
+                            <span>50 Shops</span>
+                          </div>
+                        )}
                         <div className="flex items-center gap-1">
                           <SquareArrowOutUpRight size={16} />
                           <span>{listing.area}</span>
                         </div>
+                        {(listing as { floors?: string }).floors && (
+                          <div className="flex items-center gap-1">
+                            <Layers size={16} />
+                            <span>{(listing as { floors?: string }).floors}</span>
+                          </div>
+                        )}
                       </div>
                       
                       <a href="#contact" className="block w-full text-center py-3 bg-clay text-charcoal font-medium rounded-lg group-hover:bg-charcoal group-hover:text-white transition-colors">
