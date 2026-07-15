@@ -67,7 +67,13 @@ export default function Hero() {
               <PhoneCall size={20} />
             </motion.div>
             <span className="flex items-center gap-2">
-              <span className="text-2xl leading-none">🇪🇹</span>
+              <svg width="24" height="16" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" className="rounded-[2px] opacity-85">
+                <rect width="120" height="26.66" fill="#078930"/>
+                <rect y="26.66" width="120" height="26.66" fill="#FCDD09"/>
+                <rect y="53.33" width="120" height="26.66" fill="#DA121A"/>
+                <circle cx="60" cy="40" r="16" fill="#0F47AF"/>
+                <polygon points="60,27 63,35 72,35 65,40 68,49 60,44 52,49 55,40 48,35 57,35" fill="#FCDD09"/>
+              </svg>
               <span>+2519 00 57 51 51</span>
             </span>
           </motion.a>
