@@ -106,7 +106,7 @@ export default function LeadCaptureForm() {
                         id="name"
                         {...register("name")}
                         className={`w-full px-4 py-3 bg-clay/50 border ${errors.name ? 'border-red-500' : 'border-clay'} rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta/50 transition-all`}
-                        placeholder="John Doe"
+                        placeholder="Abebe Kebede"
                       />
                       {errors.name && <span className="text-red-500 text-xs mt-1 block">{errors.name.message}</span>}
                     </div>
@@ -129,7 +129,7 @@ export default function LeadCaptureForm() {
                       type="email"
                       {...register("email")}
                       className={`w-full px-4 py-3 bg-clay/50 border ${errors.email ? 'border-red-500' : 'border-clay'} rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta/50 transition-all`}
-                      placeholder="john@example.com"
+                      placeholder="abebe@example.com"
                     />
                     {errors.email && <span className="text-red-500 text-xs mt-1 block">{errors.email.message}</span>}
                   </div>

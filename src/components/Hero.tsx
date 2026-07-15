@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PhoneCall } from "lucide-react";
 
 export default function Hero() {
   const headline = "Trusted Real Estate Agent in Addis Ababa";
@@ -49,6 +49,26 @@ export default function Hero() {
           >
             የንግድ ቦታ ይግዙ
           </motion.p>
+          
+          {/* Mobile-only Phone Number CTA */}
+          <motion.a
+            href="tel:+251900575151"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 md:hidden relative flex items-center justify-center mx-auto w-fit"
+          >
+            <div className="absolute inset-0 bg-terracotta rounded-full animate-ping opacity-75"></div>
+            <div className="relative flex items-center justify-center gap-3 bg-terracotta text-white px-7 py-3 rounded-full font-bold text-xl shadow-lg">
+              <motion.div
+                animate={{ rotate: [0, -15, 15, -15, 15, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 1.5 }}
+              >
+                <PhoneCall size={24} />
+              </motion.div>
+              <span>+2519 00 57 51 51</span>
+            </div>
+          </motion.a>
         </div>
         
         {/* Image / Headshot */}
