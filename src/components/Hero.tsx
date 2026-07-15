@@ -40,6 +40,15 @@ export default function Hero() {
               </motion.span>
             ))}
           </h1>
+          {/* Amharic Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-terracotta mt-3 text-center md:text-left tracking-wide"
+          >
+            የንግድ ቦታ ይግዙ
+          </motion.p>
         </div>
         
         {/* Image / Headshot */}
