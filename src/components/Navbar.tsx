@@ -17,9 +17,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center gap-2">
-            <span className="font-serif text-2xl font-bold text-charcoal">
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              className="font-serif text-2xl font-bold text-charcoal hover:text-terracotta transition-colors"
+            >
               Fyora Abel
-            </span>
+            </a>
             <span className="hidden sm:inline-block text-sm text-charcoal-light border-l border-charcoal/20 pl-2">
               Aftaza Properties
             </span>

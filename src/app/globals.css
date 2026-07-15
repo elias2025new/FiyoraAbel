@@ -34,3 +34,40 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: initial;
 }
+
+/* ── Privacy Policy prose styles ── */
+.prose-custom {
+  color: #4A4A4A;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.prose-custom section {
+  margin-bottom: 0;
+  scroll-margin-top: 2rem;
+}
+.prose-custom p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  color: #4A4A4A;
+}
+.prose-custom ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose-custom li {
+  margin-bottom: 0.5rem;
+  color: #4A4A4A;
+}
+.prose-custom a {
+  color: #C65D47;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-custom a:hover {
+  color: #d97757;
+}
+.prose-custom strong {
+  color: #2D2D2D;
+  font-weight: 600;
+}
+
