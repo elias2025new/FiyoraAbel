@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, PhoneCall } from "lucide-react";
+import { track } from "@vercel/analytics";
 
 export default function Hero() {
   const headline = "Trusted Real Estate Agent in Addis Ababa";
@@ -53,6 +54,7 @@ export default function Hero() {
           {/* Mobile-only Phone Number CTA */}
           <motion.a
             href="tel:+251900575151"
+            onClick={() => track("phone_click", { location: "hero_mobile_cta" })}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
